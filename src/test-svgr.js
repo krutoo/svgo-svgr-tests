@@ -7,6 +7,9 @@ const filePath = path.join(__dirname, 'test.svg');
 const fileData = fs.readFileSync(filePath, 'utf8');
 
 svgr(fileData, {
+  plugins: [
+    '@svgr/plugin-svgo'
+  ],
   svgProps: {
     'data-test': 123,
   },
